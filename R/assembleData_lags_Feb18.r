@@ -11,8 +11,8 @@
 #' @export
 assemble.data.lags = function(pop, cases, NEdat, spi, spei, target.date, start.year, in.seed){
   
-  # Identify starting month #**# Should this be an input, or is it best to use the month from the target date?
-  start.month = as.numeric(strsplit(target.date, '-')[[1]][2])
+  # Identify starting month
+  start.month = as.numeric(strsplit(as.character(target.date), '-')[[1]][2])
   
   # Assemble Human Cases data
   pop$year <- as.integer(pop$year)

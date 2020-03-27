@@ -15,8 +15,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Set up data for example
 ```{r data, message=FALSE}
-library(tidyverse)
+#library(tidyverse)
+library(dplyr)
 library(flm) # makes it easier to do quality control to have functions readily available
+library(ggplot2)
 #**# Moving code from assembleData_lags file
 
 # Read in population data
@@ -81,7 +83,6 @@ allLagsT %>% group_by(year) %>%
 
 ```{r flm}
 
-#**# Turned off function call while checking that the package loads
 flm.results = flm::call.flm(pop, cases, NEdat, spi, spei, target.date, start.year, in.seed = 4872957)
 
 # Examine flm.results
